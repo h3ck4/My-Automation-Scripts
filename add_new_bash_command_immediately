@@ -1,0 +1,20 @@
+#!/bin/bash
+# Define a function to print usage information
+print_usage() {
+  echo "Usage: add_new_command [-h]"
+  echo "Options: add new command into bashrc made By H3CK4"
+  echo "-h: show help"
+  echo "\$1: command name"
+  echo "\$2: your scripts location"
+  echo "example: add.. ls /home/ls.sh"
+}
+
+# Check if the first argument is -h
+if [ "$1" == "-h" ]; then
+  # Display help and exit
+  print_usage
+  exit 0
+else 
+    sudo echo alias $1=\"$2\" >> ~/.bashrc
+    sudo echo alias $1=\"$2\" >> ~/.zshrc
+fi
